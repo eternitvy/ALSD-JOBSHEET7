@@ -11,8 +11,29 @@ public class Mahasiswa {
     }
 
     void tampilMahasiswa() {
-        System.out.println("NIM: " + nim + "\n");
-        System.out.println("Nama: " + nama + "\n");
-        System.out.println("Prodi: " + prodi + "\n");
+        System.out.println("NIM    : " + nim);
+        System.out.println("Nama   : " + nama);
+        System.out.println("Prodi  : " + prodi);
+    }
+
+    Mahasiswa[] listMhs = new Mahasiswa[3];
+    int idx;
+    
+    void tambah(Mahasiswa m) {
+        if (idx < listMhs.length) {
+            listMhs[idx] = m;
+            idx++;
+        }
+        else {
+            System.out.println("Data sudah penuh");
+        }
+    }
+
+    void tampilDataMhs() {
+        for (Mahasiswa m:listMhs) {
+            m.tampilMahasiswa();
+            System.out.println();
+        }
     }
 }
+
